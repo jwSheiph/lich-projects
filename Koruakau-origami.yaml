@@ -1,0 +1,22 @@
+---
+
+# Hunting Settings #
+training_manager_hunting_priority: true
+training_manager_priority_skills:
+- Targeted Magic
+- Light Armor
+- Light Thrown
+- Debilitation
+- Small Edged
+
+hunting_info:
+- :zone: origami
+  args:
+    - ORIGAMI
+    - d0
+    - construct
+  :duration: 30
+  stop_on:
+  - Targeted Magic
+  - Light Armor
+  - Debilitation

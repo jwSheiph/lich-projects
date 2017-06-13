@@ -1,0 +1,67 @@
+---
+
+# Hunting Settings #
+training_manager_hunting_priority: true
+training_manager_priority_skills:
+- Stealth
+- Small Edged
+
+hunting_info:
+- :zone: beisswurms
+  args:
+    - STEALTH
+    - d20
+  :duration: 90
+  stop_on:
+  - Stealth
+
+dance_threshold: 20
+dance_skill: Targeted Magic
+weapon_training:
+  Targeted Magic: ''
+
+manipulate_threshold: 2
+
+training_abilities:
+  Analyze: 300
+  App Quick: 160
+  Hunt: 231
+  Stealth: 30
+  Perc Health: 120
+
+buff_spells:
+  # Innocence:
+  #   abbrev: INNOC
+  #   mana: 32
+  #   recast: 2
+  #   cambrinth:
+  #   - 5
+
+  Mental Focus:
+    abbrev: MeF
+    mana: 7
+    cambrinth:
+    - 10
+
+  Iron Constitution:
+    abbrev: IC
+    recast: 1
+    mana: 10
+    cambrinth:
+    - 4
+    
+  Refresh:
+    abbrev: Refresh
+    recast: 1
+    mana: 10
+    cambrinth:
+    - 10
+    - 10
+
+  Blood Staunching:
+    abbrev: BS
+    recast: 1
+    mana: 5
+    cambrinth:
+    - 14
+    - 14

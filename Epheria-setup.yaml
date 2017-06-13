@@ -1,0 +1,192 @@
+--- 
+training_manager_hunting_priority: true
+training_manager_priority_skills: 
+  - "Light Thrown"
+  - "Small Edged"
+  - Crossbow
+  - Debilitation
+  - "Targeted Magic"
+  - Brawling
+  - "Offhand Weapon"
+
+hunting_info:
+- :zone: grass_eels
+  :duration: 20
+  stop_on:
+  - Melee Mastery
+  - Missile Mastery
+  
+
+# Gear settings
+gear:
+# - :adjective: example
+#   :name: gear
+#   :is_leather: true
+#   :hinders_lockpicking: false
+#   :is_worn: true
+- :adjective: full
+  :name: plate
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+- :adjective: metal
+  :name: armet
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+- :adjective: warrior's
+  :name: shield
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+- :adjective: plate
+  :name: gauntlets
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+## Armors ##
+ - :adjective: parry
+   :name: stick
+   :is_leather: false
+   :hinders_lockpicking: false
+   :is_worn: true
+# - :adjective: brass
+  # :name: knuckles
+  # :is_leather: false
+  # :hinders_lockpicking: true
+  # :is_worn: true
+# - :adjective: elbow
+  # :name: spikes
+  # :is_leather: false
+  # :hinders_lockpicking: false
+  # :is_worn: true
+- :adjective:
+  :name: blades
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
+- :adjective:
+  :name: cutlass
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
+- :adjective: mariner's
+  :name: arbalest
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
+- :adjective: throwing
+  :name: hammer
+  :hinders_lockpicking: false
+  :is_leather: false
+  :is_worn: false
+gear_sets:
+  standard:
+  - full plate
+  - metal armet
+  - plate gauntlets
+  - warrior's shield
+  - parry stick
+#  - brass knuckles
+#  - elbow spikes
+
+# Combat settings
+offensive_spells:
+- skill: Targeted Magic
+  name: Footman's Strike
+  cast_only_to_train: true
+  mana: 2
+- skill: Debilitation
+  name: Stun Foe
+  cast_only_to_train: true
+  mana: 2
+
+buff_spells:
+  Heroic Strength:
+    abbrev: HES
+    recast: 1
+    mana: 1
+    cambrinth:
+    - 15
+  Aspirant's Aegis:
+    abbrev: AA
+    recast: 1
+    mana: 1
+    cambrinth:
+    - 15
+
+buff_nonspells:
+   slam left: 120
+
+dance_skill: Crossbow
+training_abilities:
+  Tactics: 89
+  Hunt: 131
+  Perc: 163  
+  
+weapon_training:
+  Brawling: ''
+  Light Thrown: blades
+  Crossbow: mariner's arbalest
+  Small Edged: cutlass
+  Offhand Weapon: blades
+  
+skinning:
+  skin: true
+  arrange_all: false
+  arrange_count: 4
+  tie_bundle: true
+
+# Non-combat settings
+exp_timers:
+  Attunement: 130
+crossing_training:
+- Appraisal
+#- Athletics
+- Perception
+- Augmentation
+- Warding
+- Utility
+- Attunement
+- Outdoorsmanship
+- Scholarship
+training_spells:
+  Augmentation:
+    abbrev: HES
+  Warding:
+    abbrev: AA
+  Utility:
+    abbrev: VOS
+    
+train_appraisal_with_gear: true
+braid_item: grass
+
+
+safe_room: 8250
+cambrinth: cambrinth.cube
+held_cambrinth: true
+stored_cambrinth: true
+cambrinth_cap: 30
+
+storage_containers:
+  - pilgrim's satchel
+  - thigh quiver
+  - leather pack
+
+tithe: true
+favor_goal: 10
+favor_god: Chadatru
+
+sell_loot_bundle: true
+sell_loot_skip_bank: true
+
+stop_pick_on_mindlock: true
+use_lockpick_ring: true
+skip_lockpick_ring_refill: true
+lockpick_container: ring
+lockpick_type: ordinary
+harvest_traps: false
+picking_box_source: pack
+picking_box_storage: satchel
+lockpick_dismantle:
+lockpick_ignore_difficulty: false

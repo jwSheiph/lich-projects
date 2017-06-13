@@ -1,0 +1,354 @@
+---
+
+# Hunting Settings #
+training_manager_hunting_priority: true
+training_manager_priority_skills:
+- Evasion
+- Light Thrown
+- Light Armor
+
+priority_skills_lower_limit: 10
+
+hunting_file_list:
+  - setup
+  - manip
+
+hunting_info:
+- :zone: endrus_serpents
+  args:
+    - SETUP
+    - d0
+    - construct
+  :duration: 16
+  stop_on:
+  - Evasion
+  - Light Armor
+  before:
+  - attunement
+  after:
+  - attunement
+  - study-art
+
+dance_threshold: 2
+dance_skill: Small Blunt
+weapon_training:
+  Targeted Magic: ''
+  Light Thrown: throwing spike
+  Small Blunt: throwing spike
+  Offhand Weapon: balanced tago
+  Small Edged: balanced tago
+
+priority_defense: Evasion
+
+training_abilities:
+  Perc Health: 120
+  App: 300
+  Gaze MY Crystal: 1200
+  Analize: 180
+  Stealth: 140
+  Tactics: 130
+
+# Gear and Equipment Settings
+gear:
+- :adjective: black
+  :name: leathers
+  :is_leather: true
+  :hinders_lockpicking: false
+  :is_worn: true
+
+- :adjective: quilted
+  :name: gloves
+  :is_leather: true
+  :hinders_lockpicking: true
+  :is_worn: true
+
+- :adjective: scale
+  :name: balaclava
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+
+- :adjective: target
+  :name: shield
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: true
+
+- :adjective: parry
+  :name: stick
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: true
+
+- :adjective: balanced
+  :name: tago
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
+  :wield: true
+
+- :adjective: throwing
+  :name: spike
+  :is_leather: false
+  :hunders_lockpicking: false
+  :is_worn: false
+  :wield: true
+
+gear_sets:
+  standard:
+  - black leathers
+  - quilted gloves
+  - scale balaclava
+  - target shield
+  - parry stick
+
+
+### Combat Magic ###
+hunting_room_min_mana: 8
+hunting_room_strict_mana: false
+
+offensive_spells:
+  - skill: Targeted Magic
+    name: Guardian Spirit
+    abbrev: gs
+    cyclic: true
+    mana: 5
+    harmless: true
+    cast: cast custom
+    command: WARRIOR TO BEHAVIOR DEFENSIVE
+
+  - skill: Targeted Magic
+    name: Paralysis
+    abbrev: Para
+    mana: 2
+    harmless: true
+    prep_time: 8
+    cambrinth:
+    - 3
+    
+  - skill: Debilitation
+    name: Lethargy
+    abbrev: Leth
+    mana: 2
+    harmless: true
+    cambrinth:
+    - 2
+
+# offensive_spell_cycle:
+# - Paralysis
+# - Paralysis
+# - Lethargy
+
+
+buff_spells:
+  Mental Focus:
+    abbrev: MeF
+    mana: 7
+    cambrinth:
+    - 10
+
+  Iron Constitution:
+    abbrev: IC
+    recast: 1
+    mana: 10
+    cambrinth:
+    - 4
+    
+  # Innocence:
+  #   abbrev: Inno
+  #   recast: 2
+  #   mana: 5
+  #   cambrinth:
+  #   - 10
+  #   - 10
+  
+  Refresh:
+    abbrev: Refresh
+    recast: 1
+    mana: 10
+    cambrinth:
+    - 10
+    - 10
+     
+  
+#buff_nonspells:
+
+prehunt_buffs: 8245
+
+waggle_sets:
+  prehunt_buffs:
+    Mental Focus:
+      abbrev: MeF
+      recast: 1
+      mana: 7
+      cambrinth:
+      - 10
+
+    Iron Constitution:
+      abbrev: IC
+      recast: 1
+      mana: 10
+      cambrinth:
+      - 4
+    
+    Refresh:
+      abbrev: Refresh
+      recast: 1
+      mana: 10
+      cambrinth:
+      - 10
+      - 10
+
+  town_buffs:
+    Mental Focus:
+      abbrev: MeF
+      recast: 1
+      mana: 7
+      cambrinth:
+      - 10
+
+    Blood Staunching:
+      abbrev: BS
+      recast: 1
+      mana: 5
+      cambrinth:
+      - 14
+      - 14
+
+    Cure Disease:
+      abbrev: CD
+      recast: 1
+      mana: 15
+      cambrinth:
+      - 10
+
+
+skinning:
+  skin: true
+  arrange_all: false
+  arrange_count: 1
+  tie_bundle: true
+
+cambrinth: armband
+#held_cambrinth: true
+cambrinth_cap: 50
+#dedicated_camb_use: spell
+train_with_spells: true
+#use_research: false
+stored_cambrinth: false
+prep_scaling_factor: 1
+
+# Misc settings #
+empty_hunting_room_messages:
+- Join the empaths they said.  Save the world they said...
+hunting_buddies:
+- Liarda
+- Flaniel
+- Cynaed
+- Asldar
+safe_room: 8245
+
+training_abilities:
+  Analyze: 300
+  App Quick: 160
+  Hunt: 231
+  Stealth: 162
+  Perc Health: 120
+
+loot_additions:
+- runestone
+
+crossing_training:
+  - Mechanical Lore
+  - Attunement
+  - Performance
+  - Sorcery
+  - Athletics
+  - Outdoorsmanship
+  - Empathy
+  - Augmentation
+  - Warding
+  - Utility
+  - Appraisal
+  - First Aid
+
+textbook: false
+
+classes_to_teach:
+  - Empathy
+  - Evasion
+  - Locksmithing
+  - Arcana
+
+training_spells:
+  Augmentation:
+    abbrev: MeF
+    symbiosis: false
+  Warding:
+    abbrev: IC
+    symbiosis: false
+  Utility:
+    abbrev: BS
+    symbiosis: false
+  
+# For lore training
+forage_item: rock
+braid_item: grass
+hand_armor: quilted gloves
+
+storage_containers:
+  - pack
+  - sheath
+
+# Lockpicking settings
+stop_pick_on_mindlock: true
+use_lockpick_ring: true
+skip_lockpick_ring_refill: false
+lockpick_container: ring
+lockpick_type: ordinary
+harvest_traps: false
+picking_box_source: pack
+picking_box_storage: pack
+lockpick_room_id: 969
+lockpick_ignore_difficulty: true
+
+favor_goal: 50
+favor_god: Hodierna
+
+sell_loot_money_on_hand: 40000
+
+# Crafing Settings #
+# crafting_container: orange.sack
+# crafting_items_in_container: orange.sack
+# alchemy_belt: orange.sack
+
+# QOL Settings
+
+sell_loot_pouch: true
+sell_loot_bundle: true
+gem_pouch_adjective: green
+sell_loot_skip_bank: true
+ignored_npcs:
+- warrior
+- Warrior
+
+# EMPATH SETTINGS
+
+#manipulate_threshold: 2
+
+Bleeders:
+empath_healing:
+  VH:
+  - 36
+
+  HW:
+  - 20
+  - 20
+  - 20
+
+  HS:
+  - 20
+  - 20
+
+  HEAL:
+  - 30
