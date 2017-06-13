@@ -1,19 +1,33 @@
---- 
-training_manager_hunting_priority: true
-training_manager_priority_skills: 
-  - Crossbow
-  - Debilitation
-  - Targeted Magic
-  - Brawling
-  - Offhand Weapon
+---
+# https://elanthipedia.play.net/Paladin#Circle_Requirements
+# 3 Magics: Arcana, Augmentation, Attunement
+# 4 Weapons (only 2 are needed to circle): Brawling, Heavy Thrown, Polearms, Twohanded Edged
+# 2 Armors: Plate Armor, Shield Usage
+# 4 Survivals: Athletics, Perception, Skinning, Outdoorsmanship (Does not include Evasion)
+# 3 Lores: Appraisal, Tactics, Scholarship
 
+# You do not need to train any more Magic skills to circle
+# However, you will probably end up training them all since they each have very useful spells
+# The other Magic skills are: Targeted Magic, Warding, Debilitation, Utility
+
+# Hunting settings
+training_manager_hunting_priority: true
+training_manager_priority_skills:
+- Crossbow
+- Heavy Thrown
+- Shield Usage
+- Plate Armor
+- Parry Ability
 hunting_info:
-- :zone: grass_eels
-  :duration: 20
+- :zone: goblins
+  :args:
+    - SETUP
+    - d2
+  :duration: 45
   stop_on:
-  - Melee Mastery
-  - Missile Mastery
-  
+  - Shield Usage
+  - Plate Armor
+  - Parry Ability
 
 # Gear settings
 gear:
@@ -22,46 +36,52 @@ gear:
 #   :is_leather: true
 #   :hinders_lockpicking: false
 #   :is_worn: true
+## MAIN BODY
 - :adjective: full
   :name: plate
   :is_leather: false
   :hinders_lockpicking: true
   :is_worn: true
+## HELM
 - :adjective: metal
   :name: armet
   :is_leather: false
-  :hinders_lockpicking: true
+  :hinders_lockpicking: false
   :is_worn: true
+## SHIELD
 - :adjective: warrior's
   :name: shield
   :is_leather: false
   :hinders_lockpicking: true
   :is_worn: true
+##  PARRY
+- :adjective: parry
+  :name: stick
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: true
+## HANDS
 - :adjective: plate
   :name: gauntlets
   :is_leather: false
   :hinders_lockpicking: true
   :is_worn: true
 
-## Armors ##
-
-- :adjective: parry
-  :name: stick
-  :is_leather: false
-  :hinders_lockpicking: false
-  :is_worn: true
+##  BRAWLING
 # - :adjective: brass
-  # :name: knuckles
-  # :is_leather: false
-  # :hinders_lockpicking: true
-  # :is_worn: true
+#   :name: knuckles
+#   :is_leather: false
+#   :hinders_lockpicking: true
+#   :is_worn: true
 # - :adjective: elbow
-  # :name: spikes
-  # :is_leather: false
-  # :hinders_lockpicking: false
-  # :is_worn: true
-- :adjective:
-  :name: blades
+#   :name: spikes
+#   :is_leather: false
+#   :hinders_lockpicking: false
+#   :is_worn: true
+
+##  WEAPONS
+- :adjective: mahogany
+  :name: crossbow
   :is_leather: false
   :hinders_lockpicking: false
   :is_worn: false
@@ -70,71 +90,100 @@ gear:
   :is_leather: false
   :hinders_lockpicking: false
   :is_worn: false
+- :adjective: throwing
+  :name: hammer
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
 - :adjective: mariner's
   :name: arbalest
   :is_leather: false
   :hinders_lockpicking: false
   :is_worn: false
-- :adjective: throwing
-  :name: hammer
-  :hinders_lockpicking: false
-  :is_leather: false
-  :is_worn: false
+
 gear_sets:
   standard:
   - full plate
   - metal armet
-  - plate gauntlets
   - warrior's shield
+  - plate gauntlets
   - parry stick
-#  - brass knuckles
-#  - elbow spikes
+# - brass knuckles
+# - elbow spikes
+  - cutlass
+  - throwing hammer
 
 # Combat settings
-offensive_spells:
-- skill: Targeted Magic
-  name: Footman's Strike
-  cast_only_to_train: true
-  mana: 2
-- skill: Debilitation
-  name: Stun Foe
-  cast_only_to_train: true
-  mana: 2
-
 buff_spells:
   Heroic Strength:
     abbrev: HES
     recast: 1
-    mana: 1
+    mana: 10
     cambrinth:
-    - 15
+    - 4
+
   Aspirant's Aegis:
     abbrev: AA
     recast: 1
-    mana: 1
+    mana: 10
     cambrinth:
-    - 15
+    - 4
+
+prehunt_buffs: 8245
+
+waggle_sets:
+  prehunt_buffs:
+    Heroic Strength:
+      abbrev: HES
+      recast: 1
+      mana: 10
+      cambrinth:
+      - 5
+
+    Aspirant's Aegis:
+      abbrev: AA
+      recast: 1
+      mana: 10
+      cambrinth:
+      - 5
+
+### Combat Magic ###
+hunting_room_min_mana: 9
+hunting_room_strict_mana: false
+offensive_spells:
+  - name: Stun Foe
+    abbrev: SF
+    mana: 1
+    cast_only_to_train: true
+    max_threshold: 2
+
+  - name: Footman's Strike
+    abbrev: FST
+    mana: 2
+    min_threshold: 2
+
+
+dance_skill: Small Edged
+training_abilities:
+  Tactics: 30
+  Hunt: 80
+  Perc: 120
 
 buff_nonspells:
-   slam left: 120
+  Slam Left: 140
 
-dance_skill: Crossbow
-training_abilities:
-  Tactics: 89
-  Hunt: 131
-  Perc: 163  
-  
 weapon_training:
   Brawling: ''
-  Light Thrown: blades
-  Crossbow: mariner's arbalest
+  Heavy Thrown: throwing hammer
   Small Edged: cutlass
-  Offhand Weapon: blades
-  
+  Crossbow: mariner's arbalest
+  Offhand Weapon: cutlass
+  Large Blunt: throwing hammer
+
 skinning:
   skin: true
   arrange_all: false
-  arrange_count: 4
+  arrange_count: 1
   tie_bundle: true
 
 # Non-combat settings
@@ -142,14 +191,16 @@ exp_timers:
   Attunement: 130
 crossing_training:
 - Appraisal
-#- Athletics
+- Athletics
 - Perception
 - Augmentation
-- Warding
-- Utility
 - Attunement
 - Outdoorsmanship
 - Scholarship
+- Mechanical Lore
+
+braid_item: grass
+
 training_spells:
   Augmentation:
     abbrev: HES
@@ -157,36 +208,12 @@ training_spells:
     abbrev: AA
   Utility:
     abbrev: VOS
-    
-train_appraisal_with_gear: true
-braid_item: grass
+prep_scaling_factor: 1.0
 
 
-safe_room: 8250
-cambrinth: cambrinth.cube
-held_cambrinth: true
-stored_cambrinth: true
-cambrinth_cap: 30
-
-storage_containers:
-  - pilgrim's satchel
-  - thigh quiver
-  - leather pack
-
+safe_room: 968
+cambrinth: cambrinth.ring
+cambrinth_cap: 5
 tithe: true
-favor_goal: 10
+favor_goal: 50
 favor_god: Chadatru
-
-sell_loot_bundle: true
-sell_loot_skip_bank: true
-
-stop_pick_on_mindlock: true
-use_lockpick_ring: true
-skip_lockpick_ring_refill: true
-lockpick_container: ring
-lockpick_type: ordinary
-harvest_traps: false
-picking_box_source: pack
-picking_box_storage: satchel
-lockpick_dismantle:
-lockpick_ignore_difficulty: false
