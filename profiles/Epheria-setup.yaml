@@ -1,13 +1,11 @@
 --- 
 training_manager_hunting_priority: true
 training_manager_priority_skills: 
-  - "Light Thrown"
-  - "Small Edged"
   - Crossbow
   - Debilitation
-  - "Targeted Magic"
+  - Targeted Magic
   - Brawling
-  - "Offhand Weapon"
+  - Offhand Weapon
 
 hunting_info:
 - :zone: grass_eels
@@ -44,12 +42,14 @@ gear:
   :is_leather: false
   :hinders_lockpicking: true
   :is_worn: true
+
 ## Armors ##
- - :adjective: parry
-   :name: stick
-   :is_leather: false
-   :hinders_lockpicking: false
-   :is_worn: true
+
+- :adjective: parry
+  :name: stick
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: true
 # - :adjective: brass
   # :name: knuckles
   # :is_leather: false
