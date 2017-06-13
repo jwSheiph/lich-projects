@@ -1,0 +1,332 @@
+---
+
+# Hunting Settings #
+training_manager_hunting_priority: true
+training_manager_priority_skills:
+- Targeted Magic
+- Heavy Thrown
+- Light Thrown
+- Debilitation
+
+hunting_file_list:
+  - setup
+  - back
+hunting_info:
+- :zone: endrus_serpents
+  :duration: 16
+  args:
+  - setup
+  stop_on:
+  - Targeted Magic
+  - Heavy Thrown
+  - Debilitation
+  - Light Thrown
+  before:
+  - emcharge
+  - go2 919
+  - buff prehunt_buffs
+  - help_start
+  after:
+  - arcana_bootstrap
+  - pathwayStop
+  - attunement
+  - study-art
+  - c_arcana
+
+stance_override: 80 50 50
+
+# Combat Settings #
+dance_threshold: 2
+dance_skill: Targeted Magic
+weapon_training:
+  Targeted Magic: ' '
+  Heavy Thrown: javelin
+  Light Thrown: bola
+  Staves: quarterstaff
+  
+summoned_weapons:
+- name: Heavy Thrown
+  turn: false
+- name: Light Thrown
+  turn: false
+- name: Twohanded Blunt
+  turn: false
+- name: Staves
+  turn: false
+summoned_weapons_element: electric
+
+# Gear settings
+gear:
+- :adjective: mail
+  :name: robe
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: true
+- :adjective: chain
+  :name: balaclava
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+- :adjective:
+  :name: handguards
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+- :adjective: target
+  :name: shield
+  :is_leather: false
+  :hinders_lockpicking: true
+  :is_worn: true
+- :adjective: parry
+  :name: stick
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: true
+#- :adjective: chain
+#  :name: greaves
+#  :is_leather: false
+#  :hinders_lockpicking: false
+#  :is_worn: true
+#- :adjective: elbow
+#  :name: spikes
+#  :is_leather: false
+#  :hinders_lockpicking: false
+#  :is_worn: true
+- :adjective: throwing
+  :name: dagger
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
+- :adjective: war
+  :name: hammer
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
+- :adjective: round
+  :name: axe
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
+- :adjective: elkhorn
+  :name: bludgeon
+  :is_leather: false
+  :hinders_lockpicking: false
+  :is_worn: false
+
+repair_withdrawal_amount: 4000
+
+gear_sets:
+  standard:
+  - mail robe
+  - chain balaclava
+  - handguards
+  - target shield
+  - parry stick
+
+
+### Combat Magic ###
+hunting_room_min_mana: 9
+hunting_room_strict_mana: false
+
+offensive_spells:
+  - name: Fire Shards
+    abbrev: FS
+    mana: 11
+    cast_only_to_train: true
+    max_threshold: 2
+
+  - name: Mark of Ahrat
+    abbrev: MoA
+    mana: 4
+    recast_every: 30
+    expire: The fiery marks branding
+    cast_only_to_train: true
+    max_threshold: 2
+
+  - name: Fire Ball
+    abbrev: FB
+    mana: 15
+    min_threshold: 2
+    cambrinth:
+    - 5
+  
+  - name: Frostbite
+    mana: 15
+    recast_every: 23
+    min_threshold: 2
+    cambrinth:
+    - 2
+    
+# offensive_spell_cycle:
+# - Mark of Ahrat
+
+buff_spells:
+  Ethereal Fissure:
+    abbrev: etf
+    expire: fissure collapses in on itself, winking out of existence
+    cast: cast fire
+    mana: 15
+    cambrinth:
+    - 4
+
+  Substratum:
+    abbrev: subs
+    recast: 1
+    mana: 21
+    
+  Sure Footing:
+    abbrev: SuF
+    recast: 2
+    mana: 21
+    cambrinth:
+    - 4
+  
+  Ethereal Shield:
+    abbrev: ES
+    recast: 1
+    mana: 28
+    harmless: true
+
+  Tailwind:
+    abbrev: TW
+    recast: 1
+    mana: 24
+    cambrinth:
+    - 4
+    
+  Y'ntrel Sechra:
+    abbrev: YS
+    recast: 1
+    mana: 19
+    cambrinth:
+    - 4
+    
+  Dragon's Breath:
+    abbrev: DB
+    recast: 2
+    mana: 15
+    cambrinth:
+    - 2
+    - 2
+  
+  
+  # Ignite:
+    # abbrev: Ignite
+    # recast: 1
+    # mana: 16
+
+buff_nonspells:
+#   pathway focus damage: 300
+   pathway focus conserve: 300
+   summon fire domain: 450
+   exhale: 60
+
+prehunt_buffs: 8245
+
+waggle_sets:
+  prehunt_buffs:
+    Ethereal Shield:
+      abbrev: ES
+      recast: 1
+      mana: 5
+      cambrinth:
+      - 10
+      - 10
+      harmless: true
+    Substratum:
+      abbrev: subs
+      recast: 1
+      mana: 5
+      cambrinth:
+      - 8
+      - 8
+    Sure Footing:
+      abbrev: SuF
+      recast: 1
+      mana: 5
+      cambrinth:
+      - 8
+      - 8
+    Tailwind:
+      abbrev: TW
+      recast: 1
+      mana: 5
+      cambrinth:
+      - 10
+      - 10
+
+skinning:
+  skin: true
+  arrange_all: false
+  arrange_count: 1
+  tie_bundle: true
+
+cambrinth: cambrinth.ring
+#held_cambrinth: true
+cambrinth_cap: 4
+#dedicated_camb_use: spell
+train_with_spells: true
+#use_research: false
+stored_cambrinth: false
+prep_scaling_factor: 0.70
+
+# Misc settings #
+empty_hunting_room_messages:
+- I came through the fire for this?
+- Ah, this looks promising.
+- Is that you?
+hunting_buddies:
+- Liarda
+- Flaniel
+safe_room: 8250
+
+training_abilities:
+  Analyze: 300
+  Charged Maneuver: 88
+  App Quick: 160
+  Hunt: 231
+  Stealth: 162
+  Perc Elem All: 300
+
+loot_additions:
+- runestone
+
+crossing_training:
+  - Mechanical Lore
+  - Attunement
+  - Scholarship
+  - Appraisal
+  - Athletics
+  - Performance
+  - Outdoorsmanship
+  
+# For lore training
+forage_item: grass
+braid_item: grass
+hand_armor: handguards
+
+storage_containers:
+  - pack
+  - sheath
+
+# Lockpicking settings
+stop_pick_on_mindlock: false
+use_lockpick_ring: false
+skip_lockpick_ring_refill: true
+lockpick_container: pack
+lockpick_type: ordinary
+harvest_traps: false
+picking_box_source: pack
+picking_box_storage: pack
+lockpick_room_id: 969
+lockpick_ignore_difficulty: true
+
+favor_goal: 30
+favor_god: Tamsine
+
+sell_loot_money_on_hand: 40000
+
+# Crafing Settings #
+crafting_container: orange.sack
+crafting_items_in_container: orange.sack
+alchemy_belt: orange.sack
